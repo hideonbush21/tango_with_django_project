@@ -16,37 +16,42 @@ def populate():
     python_pages = [
         {'title': 'Official Python Tutorial',
          'url':'http://docs.python.org/3/tutorial/',
-         'views': 76},
+         'views': 11},
         {'title':'How to Think like a Computer Scientist',
          'url':'http://www.greenteapress.com/thinkpython/',
-         'views': 99},
+         'views': 22},
         {'title':'Learn Python in 10 Minutes',
          'url':'http://www.korokithakis.net/tutorials/python/',
-         'views': 66} ]
+         'views': 33} ]
 
     django_pages = [
         {'title':'Official Django Tutorial',
          'url':'https://docs.djangoproject.com/en/2.1/intro/tutorial01/',
-         'views': 19},
+         'views': 44},
         {'title':'Django Rocks',
          'url':'http://www.djangorocks.com/',
-         'views': 21},
+         'views': 55},
         {'title':'How to Tango with Django',
          'url':'http://www.tangowithdjango.com/',
-         'views': 29} ]
+         'views': 66} ]
 
     other_pages = [
         {'title':'Bottle',
          'url':'http://bottlepy.org/docs/dev/',
-         'views': 55},
+         'views': 77},
         {'title':'Flask',
          'url':'http://flask.pocoo.org',
-         'views': 66} ]
+         'views': 88} ]
 
     cats = {'Python': {'pages': python_pages, 'views': 128, 'likes': 64},
             'Django': {'pages': django_pages, 'views': 64, 'likes': 32},
             'Other Frameworks': {'pages': other_pages, 'views': 32, 'likes': 16} }
 
+    # If you want to add more categories or pages,
+    # add them to the dictionaries above.
+
+    # The code below goes through the cats dictionary, then adds each category,
+    # and then adds all the associated pages for that category.
     for cat, cat_data in cats.items():
         c = add_cat(cat, views=cat_data['views'], likes=cat_data['likes'])
         for p in cat_data['pages']:
